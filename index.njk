@@ -1,0 +1,14 @@
+{% raw %}{% extends "_includes/base.njk" %}
+
+{% block content %}
+<h1>{{ site.title }}</h1>
+<div id="gallery">
+    {% for artwork in collections.artwork | reverse | slice(0, 5) %}
+    <div>
+        <img src="{{ artwork.data.image }}" alt="{{ artwork.data.title }}">
+    </div>
+    {% endfor %}
+</div>
+
+<p><a href="/gallery">View all artwork</a></p>
+{% endblock %}{% endraw %}

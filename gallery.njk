@@ -1,0 +1,15 @@
+{% raw %}{% extends "_includes/base.njk" %}
+
+{% block content %}
+<h1>All Artwork</h1>
+<ul class="artwork-list">
+    {% for artwork in collections.artwork | reverse %}
+    <li>
+        <img src="{{ artwork.data.image }}" alt="{{ artwork.data.title }}">
+        <h2>{{ artwork.data.title }}</h2>
+        <p class="caption">{{ artwork.data.caption }}</p>
+        <p>{{ artwork.templateContent | safe }}</p>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}{% endraw %}
